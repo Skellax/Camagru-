@@ -28,7 +28,7 @@ services:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
     environment:
-      PMA_HOST: camagru
+      PMA_HOST: mysql
       MYSQl_ROOT_PASSWORD: "password"
     ports:
       - "8081:80"

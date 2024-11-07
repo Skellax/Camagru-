@@ -1,5 +1,7 @@
 <?php
 
+require_once 'variables.php';
+
 class DataBase {
     
     public ?\PDO $database = null;
@@ -13,7 +15,7 @@ class DataBase {
             MYSQL_PASSWORD
         );
         $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = file_get_contents("./create_base.sql");
+        $sql = file_get_contents(__DIR__ ."/create_base.sql");
         if ($sql !== false)
             $this->database->exec($sql);
         else
